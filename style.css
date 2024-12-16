@@ -1,0 +1,837 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#main {
+  width: 100%;
+}
+
+#loader {
+  /* display: none; */
+  z-index: 99999;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  color: #fff;
+}
+
+#loader #topheading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#topheading h2 {
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.reveal .parent {
+  display: block;
+  overflow-y: hidden;
+}
+.reveal .parent .child {
+  display: block;
+}
+.parent .child span {
+  display: inline-block;
+}
+#green {
+  /* display: none; */
+  position: absolute;
+  /* top se 100 persent he to upper wali div ke just neeche he */
+  top: 100%;
+  width: 100%;
+  height: 0vh;
+  background-color: #14cf93;
+  z-index: 9999;
+}
+#home {
+  width: 100%;
+  height: 140vh;
+
+  background-color: rgb(255, 255, 255);
+}
+#home #nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  width: 100%;
+  height: 100px;
+}
+
+#nav a {
+  position: relative;
+  text-decoration: none;
+  text-decoration: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+  color: #111;
+}
+
+#nav a .line {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  height: 1px;
+  background-color: #111;
+}
+
+#line1 {
+  left: 0%;
+  width: 0%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition-delay: 0.1s;
+}
+#line2 {
+  right: 0%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  width: 100%;
+}
+#nav a:hover #line2 {
+  width: 0%;
+}
+
+#nav a:hover #line1 {
+  width: 100%;
+}
+
+.rowx {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 5vw;
+  color: #111;
+  padding: 0 7vw;
+  padding-right: 12vw;
+}
+.rowx h1 {
+  font-size: 180px;
+  font-weight: 500;
+}
+.rowx .text {
+  margin-top: 9vm;
+  padding-top: 100px;
+}
+.rowx h5 {
+  opacity: 0.4;
+  font-size: 11px;
+  font-weight: 400;
+}
+.rowx h1 #color {
+  color: #14cf93;
+  font-style: italic;
+  font-family: 'freight big pro';
+}
+
+#name {
+  margin-top: 100px;
+}
+
+#image-div1 {
+  margin-bottom: 100px;
+  /* padding-bottom: 0px; */
+  position: relative;
+  height: 10px;
+  width: 100%;
+  margin-top: 0px;
+}
+#image-div2 {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  margin-top: 0px;
+}
+#image-div1 img {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#image-div2 img {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#section2 {
+  height: 150vh;
+  width: 100%;
+}
+
+#about {
+  display: flex; /* Makes children (#work, #intro) sit side by side */
+  align-items: center; /* Aligns vertically in the center */
+  justify-content: center; /* Adjust spacing between elements */
+  gap: 20px; /* Space between #work and #intro */
+  padding: 50px; /* Add padding around the container */
+  height: auto; /* Adjust height dynamically */
+  overflow: hidden; /* Ensure no overflowing content */
+}
+
+/* Work div */
+#about #work {
+  height: 550px;
+  width: 600px;
+  position: relative; /* Necessary for containing child elements */
+  overflow: hidden;
+}
+
+#about #work img {
+  padding-bottom: 100px;
+  height: 900px;
+  width: 640px;
+  filter: drop-shadow(10px 10px 20px rgb(97, 97, 97));
+  object-fit: cover;
+  transition: filter 1s ease;
+  filter: grayscale(0%);
+}
+#about #work img:hover {
+  filter: drop-shadow(10px 10px 20px rgb(97, 97, 97));
+  filter: grayscale(100%);
+}
+
+/* Intro div */
+#about #intro {
+  flex: 1; /* Make the intro div dynamically fill remaining space */
+  text-align: left; /* Align text to the left */
+  padding: 20px; /* Add padding for spacing */
+  /* border: 2px solid red; */
+}
+
+#about #intro h1 {
+  font-size: 5rem;
+  font-family: 'freight big pro';
+  color: #333;
+  /* text-transform: uppercase; */
+  margin-bottom: 15px;
+}
+
+#about #intro span {
+  color: #14cf93;
+  font-style: italic;
+  font-family: 'freight big pro';
+  font-weight: 600;
+}
+
+#about #intro p {
+  font-size: 1.8rem;
+  color: #555;
+  line-height: 1.2;
+  font-family: 'Arial', sans-serif; /* Choose a clean, modern font */
+  font-size: 1.5rem; /* Increase font size for better readability */
+  line-height: 1.7rem; /* Improve line spacing for clarity */
+  color: #333; /* Set text color to dark gray for better contrast */
+  text-align: justify; /* Justify text for a neat look */
+
+  border-radius: 8px; /* Round the corners */
+  padding: 20px; /* Add padding for better spacing */
+  margin: 20px auto; /* Center the paragraph with margin */
+  max-width: 800px; /* Limit width for readability */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+p br {
+  line-height: 1.8; /* Space out the line breaks slightly */
+}
+
+.container {
+  text-align: center;
+  left: 0%;
+  margin-top: 50px;
+  margin-right: 400px;
+}
+
+.animated-btn {
+  background: linear-gradient(45deg, #14cf93, #14cf93);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 25px;
+  font-family: 'freight big pro';
+  font-weight: 600;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-45deg);
+  transition: all 0.4s ease;
+}
+
+.animated-btn:hover::before {
+  left: 100%;
+}
+
+.animated-btn2 {
+  margin-top: 100px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 25px;
+  font-family: 'freight big pro';
+  font-weight: 600;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-btn2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-45deg);
+  transition: all 0.4s ease;
+}
+
+.animated-btn2:hover::before {
+  left: 100%;
+}
+#experience-section {
+  min-height: 160vh;
+  width: 100%;
+  background-color: rgba(20, 207, 147); /* #14cf93 with 80% opacity */
+}
+
+.latest-collection {
+  text-align: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+}
+
+.header h1 {
+  padding-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  font-size: 8rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.header h4 {
+  font-size: 1.6rem;
+  opacity: 0.7;
+  margin-top: 60px;
+}
+
+.latest-collection .description {
+  font-size: 1rem;
+  color: #555;
+  margin: 10px 0 20px;
+  margin-bottom: 20px;
+  padding-bottom: 65px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.explore-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.explore-btn:hover {
+  background-color: #555;
+}
+.describtion {
+  background-color: #ffffff; /* Card background color */
+  border-radius: 40px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside the card */
+  max-width: 900px; /* Maximum width of the card */
+  width: 300px;
+  margin: 20px auto; /* Center the card horizontally and add vertical spacing */
+  font-family: Arial, sans-serif; /* Font style */
+}
+.product-card1 {
+  border-radius: 50px;
+  width: 900px;
+  justify-content: space-around;
+  align-items: center;
+}
+.product-card {
+  margin-bottom: 80px;
+  width: 900px;
+  justify-content: space-around;
+  align-items: center;
+}
+.describtion h1 {
+  font-size: 1.5rem; /* Title size */
+  color: #333; /* Title color */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.describtion h5 {
+  font-size: 1rem; /* Subtitle size */
+  color: #777; /* Subtitle color */
+  margin-bottom: 15px; /* Space below the subtitle */
+}
+
+.describtion ul {
+  list-style-type: disc; /* List bullet style */
+  padding-left: 20px; /* Indent list items */
+  margin: 0; /* Remove extra margin */
+  color: #555; /* List text color */
+}
+
+.describtion ul li {
+  margin-bottom: 10px; /* Space between list items */
+  line-height: 1.5; /* Improve readability */
+}
+.products {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+margin-top: 80px;
+  gap: 60px;
+  
+}
+.describtion-title {
+  display: flex; /* Flex layout for horizontal alignment */
+  align-items: center; /* Center content vertically */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Semi-transparent background for blur effect */
+  backdrop-filter: blur(10px); /* Background blur effect */
+  border-radius: 50px; /* Rounded edges for the capsule look */
+  padding: 10px 20px; /* Internal padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 400px; /* Limit capsule width */
+  margin: 10px auto; /* Center horizontally and add vertical spacing */
+}
+
+.material {
+  display: flex; /* Flexbox for aligning image and text */
+  align-items: center; /* Align items vertically */
+  gap: 15px; /* Space between image and text */
+}
+
+.material img {
+  width: 50px; /* Image width */
+  height: 50px; /* Image height */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image fits properly */
+}
+
+.material h5 {
+  font-size: 2rem; /* Font size for the text */
+  color: #333; /* Text color */
+  margin: 0; /* Remove default margin */
+}
+
+/* code for random-stuff */
+
+.random-stuff {
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 5s;
+  padding: 20px; /* Add some padding around the content */
+  min-height: 50vh; /* Set a minimum height to ensure visibility */
+  /* Optional: background color to differentiate the section */
+  background-color: #FCFAF8;
+  padding-bottom: 100px;
+}
+
+.random-stuff i {
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 150px; /* Set icon size */
+  color: #000000; /* Set icon color */
+  opacity: 0.6;
+}
+
+.random-stuff hr {
+  border: 0; /* Remove default border */
+  height: 2px; /* Set height of the line */
+  background-color: #000000; /* Line color */
+  width: 70%; /* Set width of the line */
+  margin: 20px auto; /* Center the line */
+  opacity: 0.6;
+  margin-top: 100px !important;
+}
+.random-stuff h1 {
+  font-size: 9rem;
+  font-weight: 300;
+  font-family: 'freight big pro';
+  margin-top: 100px;
+}
+
+.random-stuff h1 span {
+  color: #14cf93;
+  font-style: italic;
+  font-family: 'freight big pro';
+}
+.projects {
+  min-height: 340vh;
+  width: 100%;
+  background-color: #FCFAF8;
+ transition: all cubic-bezier(0.19, 1, 0.22, 1) 5s;
+}
+.head{
+  display:flex;
+ justify-content: center;
+ align-items: center;
+}
+.head h3{
+  font-size: 2vw;
+  margin-left: 4vw;
+  font-weight: 500;
+}
+
+.row {
+  margin-top: 100px;
+ 
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* Space around columns */
+  align-items: center; /* Center align items vertically */
+  margin-bottom: 10px; /* Spacing between rows */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+ 
+}
+.section{
+  padding-top: 1px;
+ 
+}
+
+/* Column styling */
+.col {
+  border-radius: 10%;
+  overflow: hidden;
+  height: 400px;
+  text-align: center;
+  box-sizing: border-box; /* Include padding and borders in width */
+  position: relative;
+  flex-basis: 35%; /* Set initial width to 15% */
+  width: 35%; /* Prevent columns from growing larger */
+}
+
+.col .overlay{
+  width: 100%;
+  position: absolute;
+ height: 100%;
+  color: #ffffff;
+  bottom: 0;
+  background: linear-gradient(transparent, #1c1c1c 90%) ;
+opacity: 0;
+transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+}
+.col img{
+  transition: transform 0.5s;
+ height: 99%;
+}
+
+
+.col .overlay h1{
+  position: absolute;
+  font-size: 60px;
+  left: 0;
+  margin-left: 40px;
+  margin-top:20px ;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+.col .overlay h2{
+  position: absolute;
+  font-size: 30px;
+  font-size: 60px;
+  font-weight: 100;
+  left: 9%;
+  top: 20%;
+  letter-spacing: 5px;
+}
+.col .overlay h3{
+  position: absolute;
+
+  font-size: 40px;
+  font-weight: 100;
+  left: 7%;
+  bottom: 20%;
+border-bottom: 3px solid white ;
+}
+.col .overlay h4{
+  position: absolute;
+  font-size: 20px;
+  font-weight: 100;
+  left: 7%;
+  bottom: 10%;
+
+}
+.onHover{
+ width: 90%;
+ margin-left:30px;
+ border-top: 4px solid white;
+ position: absolute;
+ top: 80%;
+}
+.section{
+  min-height: 200vh;
+}
+@media (max-width: 768px) {
+  .col {
+    flex: 0 1 45%; /* Two columns per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .col {
+    flex: 0 1 100%; /* One column per row on small screens */
+  }
+}
+/* .arrow{
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 2px solid white;
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+} */
+
+/* Style for the redirect link */
+.overlay a {
+  text-decoration: none; /* Remove underline */
+  color: rgb(255, 255, 255); /* Set text color to white */
+  font-size: 50px; /* Font size for the link */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 7%;
+  bottom: 10%;
+  border: 2px solid white;
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Style for the arrow icon */
+.overlay a i {
+ 
+  transition: transform 0.3s ease; /* Smooth transition for the icon movement */
+}
+
+/* Hover effect on the link */
+.overlay a:hover {
+  color: #51e155; /* Change link color on hover */
+}
+
+/* Hover effect on the icon */
+.overlay a:hover i {
+  transform: translateX(5px); /* Move the icon slightly to the right on hover */
+}
+
+.learnings{
+  width: 100%;
+  height: 500px;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: border-bottom 1s ease;
+}
+.learnings .skill{
+  position: absolute;
+  width: 800px;
+  height: 400px;
+  right: 0%;
+  margin-top: 80px;
+  transition: border-bottom 1s ease;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+.learnings .skill h1{
+  font-family: 'freight big pro';
+  color: #0000008e;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+  opacity: 0.7;
+ margin-top: 140px;
+}
+
+.learnings .skill h3{
+  display: inline-block;
+  font-family: 'freight big pro';
+  color: #000000;
+  font-size: 4rem;
+  margin-bottom: 10px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  transition: border-bottom 1s ease; 
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+
+.footer {
+  position: relative;
+  height: 150vh;
+  background-color: #FCFAF8; /* Light gray background */
+  padding: 20px 0; /* Spacing above and below the footer content */
+  text-align: center;
+  overflow: hidden; /* Ensures no content spills out */
+  margin-bottom: 200px;
+}
+
+.footer-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* To clip the image if it exceeds the container */
+}
+
+.footer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.footer-image .over {
+  position: absolute;
+  top: 8%;
+  left: 30%;
+}
+
+.over h1 {
+  color: #ffffff;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 4.5rem;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.footer-image .msg {
+  position: absolute;
+  top: 45%;
+  height: 100px;
+  width: 650px;
+  left: 30%;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 100px;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.footer-image .msg h2 {
+  padding-top: 23px;
+  color: rgb(244, 244, 244); /* Set text color to black */
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  /* letter-spacing: 2px; */
+
+}
+
+.social-handel{
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  /* background-color: #14cf93; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social-handel .socials{
+ padding: 10px 20px 20px 20px;
+  /* background-color: red; */
+  margin-right: 50px;
+  margin-left: 50px;
+}
+.socials{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 70px;
+  border-top: 3px solid white;
+}
+.logo{
+  height: 30px;
+ 
+}
+.handel a{
+  position: absolute;
+  left: 4%;
+  text-decoration: none;
+  margin-left: 5px;
+  color: rgba(255, 255, 255, 0.705);
+}
+.handel h1{
+  display: block;
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FCFAF8;
+
+}
+.socials .logo i {
+  font-size: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 7px;
+}
+.socials .logo {
+
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  border: 2px solid white;
+  background-color: #fff;
+}
+.copy {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  text-align: center; /* Center the text */
+
+  padding: 10px 0; /* Spacing above and below the text */
+  font-size: 0.9rem; /* Slightly smaller font size */
+  color: #ffffff88; /* Dark gray text color */
+  border-top: 1px solid #ddd; /* Optional: subtle border at the top */
+}
+
+.copy p {
+  margin: 0; /* Remove default margin from the paragraph */
+  font-family: 'Arial', sans-serif; /* Clean font style */
+}
