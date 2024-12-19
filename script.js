@@ -2,7 +2,7 @@ function revealToSpan () {
   document.querySelectorAll('.reveal').forEach(function (elem) {
     var parent = document.createElement('span')
     var child = document.createElement('span')
-
+ 
     parent.classList.add('parent')
     child.classList.add('child')
 
@@ -61,20 +61,20 @@ function cardshow() {
     img.addEventListener('mouseover', () => {
       console.log(img.dataset);
       if(img.dataset.index==0){
-        projects.style.backgroundColor = 'rgb(204, 201, 245 ,1)'; // Change to desired color
-        random.style.backgroundColor = 'rgba(204, 201, 245, 1)';
+        projects.style.backgroundColor = 'rgba(204, 201, 245 )'; // Change to desired color
+        random.style.backgroundColor = 'rgba(204, 201, 245, 0.66)';
       }
       if(img.dataset.index==1){
-        projects.style.backgroundColor = 'rgba(252, 228, 214, 1)'; // Change to desired color
+        projects.style.backgroundColor = 'rgb(243, 175, 136 )'; // Change to desired color
         random.style.backgroundColor = 'rgba(252, 228, 214, 1)';
       }
       if(img.dataset.index==2){
         projects.style.backgroundColor = 'rgba(152, 216, 198, 1)'; // Change to desired color
-        random.style.backgroundColor = 'rgba(152, 216, 198, 1)';
+        random.style.backgroundColor = 'rgba(152, 216, 198, 0.64)';
       }
       if(img.dataset.index==3){
         projects.style.backgroundColor = 'rgba(212, 140, 144, 1)'; // Change to desired color
-        random.style.backgroundColor = 'rgba(212, 140, 144, 1)';
+        random.style.backgroundColor = 'rgba(212, 140, 143, 0.63)';
       }
        // Change to desired color
       img.style.opacity = '1'; 
