@@ -157,10 +157,77 @@ function socialsAnimation() {
 // Call the function to apply the effects
 socialsAnimation();
 
+function toggleDataScrollOnResize() {
+  const elements = document.querySelectorAll('[data-scroll-original]'); // Select elements with custom marker attribute
+  
+  if (window.innerWidth <= 480) {
+    elements.forEach((element) => {
+      // Remove scroll-related attributes on small screens
+      element.removeAttribute('data-scroll');
+      element.removeAttribute('data-scroll-speed');
+      element.removeAttribute('data-scroll-direction');
+    });
+  } else {
+    elements.forEach((element) => {
+      // Re-add scroll-related attributes when screen is larger
+      element.setAttribute('data-scroll', '');
+      element.setAttribute('data-scroll-speed', element.getAttribute('data-scroll-original-speed'));
+      element.setAttribute('data-scroll-direction', element.getAttribute('data-scroll-original-direction'));
+    });
+  }
+}
+
+// Add markers for original values on page load
+function addOriginalDataScrollMarkers() {
+  const elements = document.querySelectorAll('[data-scroll]');
+  elements.forEach((element) => {
+    element.setAttribute('data-scroll-original', 'true'); // Marker to identify original elements
+    element.setAttribute('data-scroll-original-speed', element.getAttribute('data-scroll-speed') || '1'); // Store original speed
+    element.setAttribute('data-scroll-original-direction', element.getAttribute('data-scroll-direction') || 'vertical'); // Store original direction
+  });
+}
+
+// Initialize the markers and handle responsive behavior
+addOriginalDataScrollMarkers();
+toggleDataScrollOnResize();
+
+// Run toggle function on window resize
+window.addEventListener('resize', toggleDataScrollOnResize);
+
+// Function to check screen width and show/hide content accordingly
+function adjustForMobile() {
+  const paragraph = document.getElementById('intro-paragraph');
+  const mobileSection = document.getElementById('mobile-section');
+  
+  // If screen width is 480px or less, remove <p> and show mobile section
+  if (window.innerWidth <= 480) {
+    if (paragraph) {
+      paragraph.style.display = 'none';  // Hide the <p> tag
+    }
+    if (mobileSection) {
+      mobileSection.style.display = 'block';  // Show the mobile section
+    }
+  } else {
+    // Restore the <p> tag and hide the mobile section for larger screens
+    if (paragraph) {
+      paragraph.style.display = 'block';  // Show the <p> tag again
+    }
+    if (mobileSection) {
+      mobileSection.style.display = 'none';  // Hide the mobile section
+    }
+  }
+}
+
+// Run function on page load
+adjustForMobile();
+
+// Run function on window resize to adjust the content dynamically
+window.addEventListener('resize', adjustForMobile);
+
 
 
 const scroll = new LocomotiveScroll({
   el: document.querySelector('#main'),
   smooth: true,
-  lerp: 0.02
+  lerp: 0.05
 })
